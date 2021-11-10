@@ -1,0 +1,7 @@
+SSL {
+Program = InputSection OutputSection ErrorSection TypeSection MechanismSection RuleSection
+comment = "%" notEOL* eol
+eol = "\n"
+notEOL = ~eol any
+}
+

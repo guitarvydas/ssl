@@ -1,0 +1,32 @@
+SSL {
+Program = InputDefinition* OutputDefinition* InputOutputDefinition*
+	ErrorDefinition* TypeOrMechanismDefinition* Rule*
+
+InputDefinitions = InputDefinition*
+OutputDefinitions = OutputDefinition*
+InputOutputDefinitions = InputOutputDefinition*
+TypeOrMechanismDefinitions = TypeOrMDefinition*
+
+
+
+InputSection = "input:" InputIdentWithAbbreviation* ";"
+OutputSection = "output:" OutputIdent* ";"
+ErrorSection = "error:" ErrorIdent* ";"
+TypeSection =TypeDeclaration+
+
+TypeDeclaration = "type" ident ":" TypeIdentDeclaration+ ";"
+
+InputIdentWithAbbreviation = ident abbreviation
+OutputIdent = ident
+ErrorIdent = ident
+TypeIdentDeclaration = ident
+
+abbreviation = squote notSQuote+ squote
+
+comment = "%" notEOL* eol
+eol = "\n"
+notEOL = ~eol any
+squote = "'"
+notSQuote = ~squote any
+}
+
